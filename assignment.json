@@ -2,9 +2,16 @@
   "assignment": {
     "canvas_title": "👨‍💻 Code-Together 18: Shortest Path & MST",
     "points_possible": 30,
-    "submission_types": ["online_url"],
+    "submission_types": [
+      "online_upload"
+    ],
     "github_classroom": true,
     "github_classroom_url": "https://classroom.github.com/a/GQ6ucfm_",
-    "executable_name": "ct18-shortest-path-mst.exe"
+    "executable_name": "ct18-shortest-path-mst.exe",
+    "allowed_extensions": [
+      "png",
+      "jpg",
+      "jpeg"
+    ]
   }
 }
