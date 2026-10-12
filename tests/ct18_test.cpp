@@ -53,7 +53,8 @@ TEST(WGraphAdd, FullGraph) {
 TEST(Dijkstra, SourceDistanceZero) {
     WeightedGraph g = build_test_graph();
     auto dist = g.dijkstra("A");
-    EXPECT_EQ(dist["A"], 0);
+    ASSERT_EQ(dist.size(), 4u);     // one entry per vertex
+    EXPECT_EQ(dist.at("A"), 0);     // .at() -- operator[] would insert a 0
 }
 
 TEST(Dijkstra, DirectEdge) {
@@ -117,6 +118,7 @@ TEST(PrimsMST, AllVerticesConnected) {
 TEST(PrimsMST, SingleVertex) {
     WeightedGraph g;
     g.add_vertex("X");
+    ASSERT_EQ(g.vertex_count(), 1);  // the graph must work before the MST can
     auto [edges, total] = g.prims_mst("X");
     EXPECT_EQ(edges.size(), 0);
     EXPECT_EQ(total, 0);
