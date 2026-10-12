@@ -82,8 +82,8 @@ TEST(Dijkstra, SingleVertex) {
     WeightedGraph g;
     g.add_vertex("X");
     auto dist = g.dijkstra("X");
-    EXPECT_EQ(dist.size(), 1);
-    EXPECT_EQ(dist["X"], 0);
+    ASSERT_EQ(dist.size(), 1u);
+    EXPECT_EQ(dist.at("X"), 0);  // .at() -- operator[] would insert a 0
 }
 
 // =============================================================================
